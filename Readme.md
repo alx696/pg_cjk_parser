@@ -20,6 +20,7 @@ ts_debug('你好中国，武汉挺住！こんにちは日本。안녕하세요�
 4. 运行Postgres 12容器，容器名称**postgres**；
 5. 复制库到运行Postgres容器中：`$ docker cp pg_cjk_parser.so postgres:/usr/lib/postgresql/12/lib/`；
 6. 使用[pgadmin4](https://hub.docker.com/r/dpage/pgadmin4)或其它数据库客户端连接数据库，执行[docker.sql](docker.sql)中的脚本。
+> 注意：docker.sql中对default_text_search_config的设置仅对当前连接有效，如果希望永久生效可以将其设置为用户参数：`alter role postgres in database postgres set default_text_search_config to 'config_2_gram_cjk';`
 
 执行下面脚本测试：
 
