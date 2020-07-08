@@ -1,4 +1,4 @@
-FROM postgres:11
+FROM postgres:12
 RUN apt-get update
 RUN apt-get install -y postgresql-server-dev-all
 RUN apt-get install -y gcc
