@@ -21,7 +21,7 @@ ts_debug('你好中国，武汉挺住！こんにちは日本。안녕하세요�
 5. 复制库到运行Postgres容器中：`$ docker cp pg_cjk_parser.so postgres:/usr/lib/postgresql/12/lib/`；
 6. 使用[pgadmin4](https://hub.docker.com/r/dpage/pgadmin4)或其它数据库客户端连接数据库，执行[docker.sql](docker.sql)中的脚本。
 
-Now you can use to_tsvector and to_tsquery to test the newly created search configuration.
+执行下面脚本测试：
 
 ```sql
 select to_tsvector('你好中国，武汉挺住！こんにちは日本。안녕하세요한국。Hello world!') @@ to_tsquery('你好 & 武汉');
